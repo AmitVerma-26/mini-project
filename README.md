@@ -27,9 +27,3 @@ A beautiful, responsive weather application with glass morphism design that disp
 - **Icons**: Font Awesome
 - **Styling**: CSS Grid & Flexbox
 - **Storage**: LocalStorage
-
-## 📦 Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/weather-app.git
