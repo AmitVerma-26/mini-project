@@ -18,7 +18,7 @@ A beautiful, responsive weather application with glass morphism design that disp
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://your-username.github.io/weather-app)
+[View Live Demo](https://your-AmitVerma-26.github.io/weather-app)
 
 ## 🛠️ Technologies Used
 
@@ -27,3 +27,4 @@ A beautiful, responsive weather application with glass morphism design that disp
 - **Icons**: Font Awesome
 - **Styling**: CSS Grid & Flexbox
 - **Storage**: LocalStorage
+
