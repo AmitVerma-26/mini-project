@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neo Weather - Glass Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <div class="container">
+        <!-- Header with Theme Toggle -->
+        <header class="glass-header">
+            <div class="header-content">
+                <h1><i class="fas fa-cloud-moon-rain"></i> Neo Weather</h1>
+                <div class="header-controls">
+                    <button id="theme-toggle" class="theme-btn">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <button id="unit-toggle" class="unit-btn">
+                        <span>°C</span>/<span>°F</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="app-grid">
+            <!-- Main Weather Card -->
+            <div class="glass-card main-weather">
+                <div class="search-container">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="city-input" placeholder="Search city..." autocomplete="off">
+                        <button id="search-btn" class="search-button">
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                    <button id="location-btn" class="location-button">
+                        <i class="fas fa-location-arrow"></i>
+                    </button>
+                </div>
+
+                <div class="weather-display" id="weather-display">
+                    <div class="loading" id="loading">
+                        <div class="loading-spinner">
+                            <i class="fas fa-spinner fa-spin"></i>
+                        </div>
+                        <p>Fetching weather data...</p>
+                    </div>
+
+                    <div class="weather-main" id="weather-main" style="display: none;">
+                        <div class="location-info">
+                            <h2 id="city-name">New York, US</h2>
+                            <p id="current-date">Monday, January 1, 2024</p>
+                        </div>
+
+                        <div class="weather-primary">
+                            <div class="temperature-section">
+                                <div class="current-temp">
+                                    <span id="temp">22</span>
+                                    <sup>°<span id="temp-unit">C</span></sup>
+                                </div>
+                                <div class="weather-condition">
+                                    <img id="weather-img" src="" alt="Clear Sky">
+                                    <p id="weather-desc">Clear Sky</p>
+                                </div>
+                            </div>
+
+                            <div class="weather-stats">
+                                <div class="stat-item">
+                                    <i class="fas fa-wind"></i>
+                                    <div>
+                                        <span class="stat-value" id="wind-speed">15</span>
+                                        <span class="stat-unit">km/h</span>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-tint"></i>
+                                    <div>
+                                        <span class="stat-value" id="humidity">65</span>
+                                        <span class="stat-unit">%</span>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <i class="fas fa-thermometer-half"></i>
+                                    <div>
+                                        <span class="stat-value" id="feels-like">24</span>
+                                        <span class="stat-unit">°C</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="error-message" id="error-message" style="display: none;">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>City Not Found</h3>
+                        <p>Please check the city name and try again.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Info Cards -->
+            <div class="glass-card info-card">
+                <h3><i class="fas fa-info-circle"></i> Weather Details</h3>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                        <span>Pressure</span>
+                        <span id="pressure">1012 hPa</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-eye"></i>
+                        <span>Visibility</span>
+                        <span id="visibility">10 km</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-cloud"></i>
+                        <span>Clouds</span>
+                        <span id="clouds">20%</span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-sun"></i>
+                        <span>UV Index</span>
+                        <span id="uv-index">4</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Air Quality Card -->
+            <div class="glass-card air-quality-card">
+                <h3><i class="fas fa-wind"></i> Air Quality</h3>
+                <div class="aqi-display">
+                    <div class="aqi-value" id="aqi-value">45</div>
+                    <div class="aqi-label" id="aqi-label">Good</div>
+                </div>
+                <div class="aqi-scale">
+                    <div class="scale-item good active"></div>
+                    <div class="scale-item moderate"></div>
+                    <div class="scale-item unhealthy"></div>
+                    <div class="scale-item very-unhealthy"></div>
+                    <div class="scale-item hazardous"></div>
+                </div>
+            </div>
+
+            <!-- Sunrise & Sunset Card -->
+            <div class="glass-card sun-card">
+                <h3><i class="fas fa-sun"></i> Sun Times</h3>
+                <div class="sun-times">
+                    <div class="sun-item">
+                        <i class="fas fa-sunrise"></i>
+                        <div>
+                            <span>Sunrise</span>
+                            <span id="sunrise">06:45 AM</span>
+                        </div>
+                    </div>
+                    <div class="sun-item">
+                        <i class="fas fa-sunset"></i>
+                        <div>
+                            <span>Sunset</span>
+                            <span id="sunset">07:30 PM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hourly Forecast -->
+            <div class="glass-card hourly-card">
+                <h3><i class="fas fa-clock"></i> 24-Hour Forecast</h3>
+                <div class="hourly-scroll" id="hourly-forecast">
+                    <!-- Hourly items will be inserted here -->
+                </div>
+            </div>
+
+            <!-- 5-Day Forecast -->
+            <div class="glass-card forecast-card">
+                <h3><i class="fas fa-calendar-alt"></i> 5-Day Forecast</h3>
+                <div class="forecast-list" id="forecast-list">
+                    <!-- Forecast items will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Weather Map -->
+            <div class="glass-card map-card">
+                <h3><i class="fas fa-map"></i> Weather Map</h3>
+                <div class="map-container">
+                    <div id="weather-map">
+                        <p>Interactive weather map would be displayed here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Searches -->
+        <div class="recent-searches glass-card">
+            <h3><i class="fas fa-history"></i> Recent Searches</h3>
+            <div class="recent-list" id="recent-list">
+                <!-- Recent items will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
