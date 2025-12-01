@@ -2,7 +2,6 @@
 
 A beautiful, responsive weather application with glass morphism design that displays current weather, forecasts, and air quality information.
 
-![Weather App Screenshot](https://via.placeholder.com/800x400/667eea/ffffff?text=Neo+Weather+App)
 
 ## ✨ Features
 
@@ -18,7 +17,7 @@ A beautiful, responsive weather application with glass morphism design that disp
 
 ## 🚀 Live Demo
 
-[View Live Demo](https://your-AmitVerma-26.github.io/weather-app)
+[View Live Demo]
 
 ## 🛠️ Technologies Used
 
@@ -27,4 +26,5 @@ A beautiful, responsive weather application with glass morphism design that disp
 - **Icons**: Font Awesome
 - **Styling**: CSS Grid & Flexbox
 - **Storage**: LocalStorage
+
 
