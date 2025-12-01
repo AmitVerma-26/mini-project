@@ -17,7 +17,7 @@ A beautiful, responsive weather application with glass morphism design that disp
 
 ## 🚀 Live Demo
 
-[View Live Demo]https://codesandbox.io/p/sandbox/github/AmitVerma-26/mini-project/tree/main
+[View Live Demo](https://codesandbox.io/p/sandbox/github/AmitVerma-26/mini-project/tree/main)
 
 ## 🛠️ Technologies Used
 
@@ -26,6 +26,7 @@ A beautiful, responsive weather application with glass morphism design that disp
 - **Icons**: Font Awesome
 - **Styling**: CSS Grid & Flexbox
 - **Storage**: LocalStorage
+
 
 
 
